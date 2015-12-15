@@ -948,6 +948,10 @@
         new $.fn.oembed.OEmbedProvider("mapjam", "rich", ["mapjam\\.com/.+"], "http://www.mapjam.com/$1", {templateRegex: /.*mapjam\.com\/(.*)/, embedtag: {tag: 'iframe', width: 480, height: 360 }, nocache: 1}),
         new $.fn.oembed.OEmbedProvider("polar", "rich", ["polarb\\.com/.+"], "http://assets-polarb-com.a.ssl.fastly.net/api/v4/publishers/unknown/embedded_polls/iframe?poll_id=$1", {templateRegex: /.*polarb\.com\/polls\/(\w+).*/, embedtag: {tag: 'iframe', width: 480, height: 360 }, nocache: 1}),
         new $.fn.oembed.OEmbedProvider("ponga", "rich", ["ponga\\.com/.+"], "https://www.ponga.com/embedded?id=$1", {templateRegex: [/.*ponga\.com\/embedded\?id=(\w+).*/, /.*ponga\.com\/(\w+).*/], embedtag: {tag: 'iframe', width: 480, height: 360 }, nocache: 1}),
+        new $.fn.oembed.OEmbedProvider("tagboard", "rich", ["tagboard\\.com/.+"], null, {
+            templateRegex: /.*tagboard\.com\/(\w+)\/(\d+).*/,
+            template: '<div class="tagboard-embed" tgb-slug="$1/$2"></div><script src="https://static.tagboard.com/public/js/embed.js"></script>',nocache: 1
+        }),
 
         //Use Open Graph Where applicable
         new $.fn.oembed.OEmbedProvider("opengraph", "rich", [".*"], null,
